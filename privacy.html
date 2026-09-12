@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Gmail Stream Deck Counter accesses, uses, stores, and protects Google account data.">
+  <title>Privacy policy · Gmail Stream Deck Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><a class="brand" href="./">Gmail Stream Deck Counter</a><nav aria-label="Main"><a href="privacy.html" aria-current="page">Privacy</a></nav></header>
+  <main>
+    <p class="eyebrow">Updated September 12, 2026</p>
+    <h1>Privacy policy</h1>
+    <p class="lead">Gmail Stream Deck Counter is a personal macOS utility maintained by Mirlan Kaiyrbaev. It displays unread Gmail counts on an Elgato Stream Deck.</p>
+    <section><h2>Google data access and use</h2><p>The tool requests <code>gmail.readonly</code>, Google’s read-only Gmail permission, to search for unread messages in the Primary, Promotions, and Social categories. It requests message identifiers and pagination information to calculate unread counts.</p><p>The implementation does not fetch message bodies, subjects, senders, attachments, or message settings. It does not send, modify, or delete email. Google’s permission description is broader than the subset of operations this tool uses.</p></section>
+    <section><h2>Storage and protection</h2><p>OAuth refresh tokens and client configuration are stored in the macOS user’s Keychain. Access tokens and unread counts are kept in process memory. Message identifiers are used while counting and are not intentionally saved to files.</p><p>Local connection-status logs contain mailbox category, connection state, error code, and HTTP status. They exclude credentials, unread counts, and email content. The log rotates after approximately 512 KB, retaining one previous file.</p></section>
+    <section><h2>Sharing and transfers</h2><p>Requests go directly from the Mac to Google’s OAuth and Gmail services over HTTPS. Gmail data is not sold, used for advertising, used to train AI models, or sent to analytics providers or third-party application servers.</p><p>Use of information received from Google APIs is limited to the unread-count functionality described here and adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p></section>
+    <section><h2>This informational website</h2><p>This website does not participate in Google sign-in or receive Gmail data. It uses no analytics scripts, forms, advertising, or application cookies. It is hosted on GitHub Pages. GitHub may process visitor IP addresses and technical request information to operate and secure its hosting service, as described in the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p></section>
+    <section><h2>Removing access and local data</h2><p>Use Disconnect in the Stream Deck action settings to remove the locally saved refresh token. Revoke the tool’s Google access at any time through <a href="https://myaccount.google.com/connections">Google Account connections</a>.</p><p>Local diagnostic logs can be deleted from <code>~/Library/Logs/GmailOAuthCounter</code>. Disconnect does not delete client configuration or diagnostic logs. Saved client configuration can be removed from the macOS Keychain under the service <code>com.mirlan.gmail-oauth-counter</code>.</p></section>
+    <section><h2>Contact and updates</h2><p>For questions, use the developer contact shown on the tool’s Google consent screen or visit <a href="https://github.com/kmirlan88">the developer’s GitHub profile</a>. Changes to this policy will be published here with an updated date.</p></section>
+  </main>
+  <footer><a href="./">Gmail Stream Deck Counter</a><span>Privacy policy</span></footer>
+</body>
+</html>
